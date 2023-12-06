@@ -14,9 +14,34 @@
     background-size:cover;
     background-position: center;
     backdrop-filter: opacity(50%);
-    background-color: black;
-
-
+    /*background-color: black;*/
+    animation: bgChange 20s linear infinite;
+}
+@keyframes bgChange {
+    0% {
+        background-image: url("pictures/1st.jpg");
+    }
+    20% {
+        background-image: url("pictures/1st.jpg");
+    }
+    25% {
+        background-image: url("pictures/albania.jpeg");
+    }
+    45% {
+        background-image: url("pictures/albania.jpeg");
+    }
+    50% {
+        background-image: url("pictures/Night.jpeg");
+    }
+    70% {
+        background-image: url("pictures/Night.jpeg");
+    }
+    75% {
+        background-image: url("pictures/albaniaNat1.jpg");
+    }
+    95% {
+        background-image: url("pictures/albaniaNat1.jpg");
+    }
 }
 .logo {
     left: 5%;
@@ -134,9 +159,49 @@
 #slider-textbox {
     position: absolute;
     margin-top: 320px;
-    width:80%;
+    width:300%;
     color:white;
-    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    border: 1px solid lime;
+}
+.slide {
+    width:100%;
+    /*margin-right: 10%;*/
+    /*margin-left: 5%;*/
+    padding: 0 10% 0 5%;
+    border: 1px solid blue;
+    animation: textChange 30s linear infinite;
+}
+
+@keyframes textChange {
+    0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    45% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(-200%);
+    }
+    70% {
+        transform: translateX(-200%);
+    }
+    75% {
+        transform: translateX(-300%);
+    }
+    95% {
+        transform: translateX(-300%);
+
+    }
+
 }
 .overlay {
     position: absolute;
@@ -219,3 +284,5 @@
         width: 100%;
     }
 }
+
+
