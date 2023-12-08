@@ -5,7 +5,7 @@
     padding: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-section{
+.form{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,18 +51,9 @@ h2{
     border-bottom: 2px solid white;
 }
 .inputbox label{
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
+    position: relative;
     color: white;
     font-size: 1em;
-    pointer-events: none;
-    transition: .5s;
-}
-input:focus ~ label,
-input:valid ~ label{
-    top: -5px;
 }
 .inputbox input {
     width: 100%;
