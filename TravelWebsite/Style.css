@@ -1,8 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 *{
     margin:0;
     padding:0;
-    font-family: sans-serif;
+    font-family:'Roboto', sans-serif;
 
+}
+a {
+    text-decoration: none;
 }
 
 .main-slider {
@@ -318,12 +324,14 @@
         width: 100%;
     }
 
+
+
 }
 
 .mid-container {
     width: 100%;
     /*background-color: lightgreen;*/
-    height: 500px;
+    height: auto;
 
 }
 #slider-text {
@@ -337,7 +345,7 @@
     color: black;
     display: flex;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 .destinations {
@@ -361,6 +369,7 @@
     justify-content: space-around;
     flex-flow: column;
     color:white;
+    letter-spacing: 1px;
 
 
 
@@ -409,8 +418,11 @@
     justify-content: center;
     z-index:777;
     font-size:20px;
-    margin-top: 40px;
-    height:40px;
+    /*margin-top: 40px;*/
+    /*height:40px;*/
+}
+.inside-h2 a {
+    color: whitesmoke;
 }
 .inside-p{
     /*border:1px solid pink;*/
@@ -422,6 +434,9 @@
     font-size: 16px;
     display: flex;
     align-items: center;
+}
+.inside-p a {
+    color: whitesmoke;
 }
 #KosoveDest {
 
@@ -443,15 +458,190 @@
 }
 .city:hover{
     scale: 1.05;
-
+    cursor: pointer;
 }
 .city-button button:hover {
     background-color: rgba(0, 0, 0, 0.21);
     color: black;
 }
+
+
+@media only screen and (max-width: 1200px){
+    .destinations {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        padding:0px;
+        flex-flow: column;
+        align-items: center;
+        /*border:2px solid red;*/
+        height: auto;
+    }
+    .city  {
+        height: 400px;
+        margin-bottom:30px;
+        width:600px
+    }
+    .city-overlay {
+        width:600px;
+        margin:0px;
+    }
+
+
+}
+@media only screen and (max-width: 660px) {
+    .city  {
+        height: 400px;
+        margin-bottom:30px;
+        width:300px
+    }
+    .city-overlay {
+        width:300px;
+        margin:0px;
+    }
+}
 .activities-container {
     width: 100%;
-    height: 600px;
-    background-color: lightgreen;
+    height: auto;
+    /*background-color: lightgreen;*/
+}
+.activities {
+    width: 80%;
+    margin-left: 10%;
+    height:auto;
+    /*border: 1px solid red;*/
+    display: flex;
+    flex-flow: row;
+    border-radius: 10px;
+    color: whitesmoke;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.act-img {
+    width: 500px;
+    height: 400px;
+    /*border: 1px solid cyan;*/
+
+}
+.right {
+    border-right: 4px solid white;
+}
+.left  {
+    border-left: 4px solid white;
+}
+.act-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.act-textbox{
+    width:100%;
+    height:400px;
+    /*border:1px solid blue;*/
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+
+
+}
+.act-textbox h1 {
+    font-size: 56px;
+    margin-top: 40px;
+}
+.act-textbox p {
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    padding: 0px 10px;
+}
+.act-textbox button {
+    width:250px;
+    height:50px;
+
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px);
+    color: whitesmoke;
+    border-radius:20px;
+    font-weight:bold ;
+    border:2px solid whitesmoke;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+}
+.act-textbox button:hover {
+    background-color: rgba(0, 0, 0, 0.21);
+}
+.act-button {
+    margin-top: 40px;
+}
+#ski {
+    background-image: url("pictures/ski-act-ph.jpg");
+}
+#hike {
+    background-image: url("pictures/hiking-ph.jpg");
+    background-position: left;
+}
+#offroad {
+    background-image: url("pictures/jeep-ph.jpg");
+    background-position: right;
+}
+#mtb {
+    background-image: url("pictures/mtb-ph.jpg");
+    background-position: bottom;
+}
+.discover-more {
+    width: 100%;
+    border-bottom:1px solid rgba(126, 113, 113, 0);
+    background-color: #2f3131;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+.discover-more h1 {
+    padding-top: 20px;
+}
+.icon-container  {
+    width: 80%;
+    margin-left:10%;
+
+    /*border: 1px solid blue;*/
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.icons {
+    width:90px;
+    height:90px;
+    /*border:1px solid black;*/
+    margin: 20px;
+
+}
+.icons svg {
+    object-fit: cover;
+    width:90px;
+    height: 90px;
+    fill:white ;
+}
+
+#discover-more-button {
+    width: 100%;
+    /*border: 1px solid lime;*/
+    margin-bottom: 30px;
+}
+#discover-more-button button  {
+    width:200px;
+    height: 50px;
+    background-color: white;
+    border-radius: 20px;
+    color: white;
+    margin-top: 10px;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+#discover-more-button button a  {
+    color: black;
+
 }
 
