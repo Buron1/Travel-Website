@@ -7,6 +7,11 @@
 body{
     background-color: white;
 }
+
+
+
+
+
 .header {
     display: flex;
     align-items: baseline;
@@ -262,6 +267,9 @@ body{
 }
 
 
+
+
+
 .dest-background{
     background-repeat: no-repeat;
     background-size: cover;
@@ -282,7 +290,10 @@ body{
     
 }
 #dest-background-al{
-    background-image: url(pictures/albaniaNat1.jpg);
+    background-image: url(pictures/albania4.jpg);
+}
+#dest-background-me{
+    background-image: url(pictures/montenegro2.jpg);
 }
 .dest-background h1{
     font-size: 50px;
