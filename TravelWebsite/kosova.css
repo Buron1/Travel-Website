@@ -332,9 +332,6 @@ body{
     margin-right: 40px;
     overflow: hidden;
 }
-.about-image :hover img{
-    transform: scale(5);
-}
 img{
     max-width: 100%;
     height: auto;
