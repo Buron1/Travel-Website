@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <title>Balkan Apex Journeys</title>
         <link rel="stylesheet" type="text/css" media="screen" href="Style.css"/>
-        <link rel="stylesheet" href="footer.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="footer.css"/>
+
         <style>
 
         </style>
@@ -19,7 +20,7 @@
 
         <div class="nav">
             <div class="logo">
-                <h3>BALKAN APEX JOURNEYS</h3>
+                <h3 id="text-logo">BALKAN APEX JOURNEYS</h3>
             </div>
             <ul class="navUl">
                 <li class="navLi"><a href="main.html">Home</a></li>
@@ -139,8 +140,8 @@
             <h1>ACTIVITIES</h1>
         </div>
         <div class="activities-container">
-            <div class="activities">
-                <div class="act-img right" >
+            <div class="activities reverse">
+                <div class="act-img right ski-bottom" >
                     <img src="pictures/ski-act.jpeg">
                 </div>
                 <div class="act-textbox" id="ski">
@@ -155,24 +156,24 @@
 
                 </div>
             </div>
-            <div class="activities">
+            <div class="activities ">
 
                 <div class="act-textbox"  id="hike">
 
                     <h1>HIKING</h1>
                     <p>
-                        Step into the world of exploration and tranquility with our hiking haven. Hiking is not merely a pastime; it's a journey into the heart of nature, an escape from the everyday hustle, and a celebration of the great outdoors. Whether you're a seasoned trailblazer or a novice seeking the path less traveled, our hiking community is your gateway to discovering the beauty and serenity of the world's most captivating landscapes.
+                        Step into the world of exploration and tranquility with our hiking haven. Hiking is not merely a pastime; it's a journey into the heart of nature, an escape from the everyday hustle, and a celebration of the great outdoors.Our hiking community is your gateway to discovering the beauty and serenity of the world's most captivating landscapes.
                     </p>
                     <div class="act-button">
                         <button><a>Learn More</a></button>
                     </div>
 
                 </div>
-                <div class="act-img left">
+                <div class="act-img left  hiking-bottom">
                     <img src="pictures/hiking.jpg">
                 </div>
             </div>
-            <div class="activities">
+            <div class="activities reverse">
                 <div class="act-img right" >
                     <img src="pictures/jeep.jpg">
                 </div>
@@ -180,7 +181,7 @@
 
                     <h1>OFFROAD DRIVING</h1>
                     <p>
-                        Rev up your engines and dive into the rugged world of offroading, where adventure knows no bounds. Offroading isn't just a sport; it's a way of life, a pulse-pounding journey that takes you beyond the beaten path and into the heart of untamed terrains. Whether you're an offroad aficionado seeking extreme challenges or a beginner eager to kick up some dirt, our offroading hub is your ultimate pit stop for adrenaline-fueled escapades.
+                        Rev up your engines and dive into the rugged world of offroading, where adventure knows no bounds. Offroading isn't just a sport; it's a way of life, a pulse-pounding journey that takes you beyond the beaten path and into the heart of untamed terrains.Our offroading hub is your ultimate pit stop for adrenaline-fueled escapades.
                     </p>
                     <div class="act-button" >
                         <button><a>Learn More</a></button>
@@ -194,7 +195,7 @@
 
                     <h1>MOUNTAIN BIKING</h1>
                     <p>
-                        Welcome to the heart-pounding world of mountain biking, where the trail becomes your canvas and the great outdoors your playground. Mountain biking isn't just a sport; it's a symphony of skill, adrenaline, and nature's raw beauty. Whether you're a seasoned rider conquering challenging descents or a newcomer eager to embrace the thrill of the trail, our mountain biking hub is your ultimate destination for all things two-wheeled adventure.
+                        Welcome to the heart-pounding world of mountain biking, where the trail becomes your canvas and the great outdoors your playground. Mountain biking isn't just a sport; it's a symphony of skill, adrenaline, and nature's raw beauty. Our mountain biking hub is your ultimate destination for all things two-wheeled adventure.
                     </p>
                     <div class="act-button">
                         <button><a>Learn More</a></button>
@@ -278,18 +279,19 @@
 
         </div>
     </div>
-    </div>
-    <footer>
-        <div class="footer-content">
-            <h2>BALKAN APEX JOURNEYS</h2>
-            <p>Adventure awaits at every turn, and the summit is just a step away. Explore the hidden gems of the Balkans, where each city tells a story, and every peak whispers a secret.</p>
-            <ul class="socials">
-                <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
-                <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
-                <li><a href="#"><ion-icon name="mail-outline"></ion-icon></a></li>
-            </ul>
-        </div>
-    </footer>
+
+        <footer>
+            <div class="footer-content">
+                <h2>BALKAN APEX JOURNEYS</h2>
+                <p>Adventure awaits at every turn, and the summit is just a step away. Explore the hidden gems of the Balkans, where each city tells a story, and every peak whispers a secret.</p>
+                <ul class="socials">
+                    <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon name="mail-outline"></ion-icon></a></li>
+                </ul>
+            </div>
+        </footer>
+
     <script>
         function showsidebar() {
              const sidebar = document.querySelector('.navUl-side');
@@ -315,16 +317,20 @@
         const destinationDiv = document.getElementById('KosoveDest');
         const destinationDiv2 = document.getElementById('AlbaniaDest');
         const destinationDiv3= document.getElementById('MontenegroDest');
+        const logo = document.getElementById('text-logo');
 
 
         destinationDiv.addEventListener('click', function (){
-            window.location.href = "#"
+            window.location.href = "#";
         })
         destinationDiv2.addEventListener('click', function (){
-            window.location.href = "#"
+            window.location.href = "#";
         })
         destinationDiv3.addEventListener('click', function (){
-            window.location.href = "#"
+            window.location.href = "#";
+        })
+        logo.addEventListener('click', function (){
+            window.location.href = "main.html";
         })
 
     </script>

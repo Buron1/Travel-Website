@@ -67,6 +67,7 @@ a {
     left: 5%;
     color: white;
     position: absolute;
+    cursor: pointer;
 
 
 
@@ -639,9 +640,55 @@ a {
     color: black;
     font-size: 15px;
     font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+#discover-more-button button:hover {
+  scale: 1.04;
+
 }
 #discover-more-button button a  {
     color: black;
+    letter-spacing: 2px;
 
+}
+@media only screen and (max-width:1300px) {
+    .act-textbox h1 {
+        font-size: 40px;
+    }
+    .act-textbox p {
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width:910px) {
+    .activities {
+        flex-flow: column;
+    }
+    .reverse {
+        flex-flow: column-reverse;
+    }
+    .act-img {
+        width: 100%;
+        height: 200px;
+    }
+    .ski-bottom img {
+        object-position: 0px 80%;
+    }
+    .left {
+        border:none;
+    }
+    .hiking-bottom img {
+        object-position: 0px 80%;
+    }
+}
+@media only screen and (max-width:572px) {
+    .act-textbox h1 {
+        margin-top:50px;
+        font-size:35px;
+
+    }
+    .act-textbox p {
+        font-size: 13px;
+    }
 }
 

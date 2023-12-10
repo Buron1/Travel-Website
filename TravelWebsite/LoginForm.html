@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertex Balkan</title>
+    <title>Balkan Apex Journeys</title>
     <link rel="stylesheet" href="loginForm.css">
 </head>
 <body>
-    <div class="form">
+    <div class="form" onsubmit="validateForm();return false">
         <div class="login-form-box">
             <div class="form-value">
                 <form action="">
@@ -15,15 +15,17 @@
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
                         <label for="email">Email</label>
-                        <input id="email" type="email" required>
+                        <input id="email" type="text" required>
+                        <div  id="emailError"></div>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                         <label for="password">Password</label>
                         <input id="password" type="password" required>
+                        <div  id="passwordError"></div>
                     </div>
                     <div class="forget">
-                        <label for=""><input type="checkbox">Remember Me <a href="#">Forget Password</a></label>
+                        <label ><input type="checkbox">Remember Me <a href="#">Forget Password</a></label>
                     </div>
                     <button>Log In</button>
                     <div class="register">
@@ -33,6 +35,37 @@
             </div>
         </div>
     </div>
+    <script>
+
+        let emailRegex = /[a-zA-Z.-_]+@+[a-z]+\.+[a-z]{2,3}$/;
+        let passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+
+        function validateForm()  {
+
+            let emailInput = document.getElementById('email');
+            let emailError = document.getElementById('emailError');
+            let passwordInput = document.getElementById('password');
+            let passwordError = document.getElementById('passwordError');
+
+
+            emailError.innerText = '';
+            passwordError.innerText = '';
+
+
+            if(!emailRegex.test(emailInput.value)){
+                emailError.innerText = 'invalid email';
+                return;
+            }
+            if(!passwordRegex.test(passwordInput.value)){
+                passwordError.innerText = 'invalid password';
+                return;
+            }
+
+            alert('form submitted succesfully!');
+
+        }
+
+    </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
