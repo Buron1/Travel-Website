@@ -7,6 +7,17 @@
     <list default="true" id="adfc1ea8-54ab-4a1c-b167-bfe0546571bd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-files/LoginForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/php-files/LoginForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-files/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/php-files/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-files/admin-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/php-files/admin-page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-files/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/php-files/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-files/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/php-files/footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-files/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/php-files/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-files/login-process.php" beforeDir="false" afterPath="$PROJECT_DIR$/php-files/login-process.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-files/loginForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/php-files/loginForm.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-files/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/php-files/navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-files/reviews-display.php" beforeDir="false" afterPath="$PROJECT_DIR$/php-files/reviews-display.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-files/reviews.php" beforeDir="false" afterPath="$PROJECT_DIR$/php-files/reviews.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +85,8 @@
       <workItem from="1702233250573" duration="470000" />
       <workItem from="1702247760828" duration="61000" />
       <workItem from="1706116105919" duration="54000" />
+      <workItem from="1707001720008" duration="185000" />
+      <workItem from="1707203968185" duration="78000" />
     </task>
     <servers />
   </component>

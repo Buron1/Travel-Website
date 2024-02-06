@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'navbar.php';
 $host = "localhost";
 $user = "root";
@@ -28,6 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             case 'deleteUser':
                 deleteUser($connection, $userId);
                 break;
+            case 'removeAdmin':
+                removeUserAdmin($connection, $userId);
+                break;
             default:
                 // Invalid action
                 break;
@@ -46,7 +50,18 @@ function deleteUser($connection, $userId) {
     $deleteSql = "DELETE FROM users WHERE id = $userId";
     mysqli_query($connection, $deleteSql);
 }
+function removeUserAdmin($connection, $userId) {
+    // Perform logic to remove admin status from the user
+    $updateSql = "UPDATE users SET role = 0 WHERE id = $userId";
+    mysqli_query($connection, $updateSql);
+}
 
+if(isset($_GET['delete'])){
+    $id = $_GET['delete'];
+    mysqli_query($connection, "DELETE FROM reviews WHERE id = $id");
+    
+ };
+ 
 ?>
 
 <!DOCTYPE html>
@@ -54,6 +69,7 @@ function deleteUser($connection, $userId) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>User Management Dashboard</title>
     <style>
         body {
@@ -145,12 +161,59 @@ function deleteUser($connection, $userId) {
                 echo '<input type="hidden" name="userId" value="' . $row['id'] . '">';
                 echo '<button type="submit" class="delete-btn">Delete</button>';
                 echo '</form>';
+                echo ' <form method="post">
+                <input type="hidden" name="action" value="removeAdmin">
+                <input type="hidden" name="userId" value="' . $row['id'] . '">
+                <button type="submit" class="admin-btn">Remove from Admin</button>
+            </form>';
                 echo '</td>';
                 echo '</tr>';
+                
             }
             ?>
         </table>
     </div>
+    <?php
+
+$select = mysqli_query($connection, "SELECT * FROM reviews");
+
+
+?>
+   <div class="product-display">
+    <table class="product-display-table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Comment</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <?php while ($row = mysqli_fetch_assoc($select)): ?>
+            <tr>
+                <td>
+                    <?php
+                    $imagePath = $row['img'];
+                    if (file_exists($imagePath)) {
+                        echo '<img src="' . $imagePath . '" height="100" alt="">';
+                    } else {
+                        echo 'Image not found';
+                    }
+                    ?>
+                </td>
+                <td><?php echo $row['username']; ?></td>
+                <td>$<?php echo $row['comment']; ?>/-</td>
+                <td>
+                    <a href="admin-update.php?edit=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-edit"></i> Edit </a>
+                    <a href="dashboard.php?delete=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-trash"></i> Delete </a>
+                </td>
+            </tr>
+        <?php endwhile; ?>
+    </table>
+</div>
+
+
+</div>
 
 </body>
 </html>

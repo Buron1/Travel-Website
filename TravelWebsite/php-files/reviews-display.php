@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // Establish a MySQLi connection (replace with your actual credentials)
 $host = "localhost";
 $user = "root";
@@ -11,8 +13,8 @@ if (!$connection) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Fetch data from the 'reviews' table
-$sql = "SELECT username, comment, img FROM reviews";
+
+$sql = "SELECT * FROM reviews";
 $result = mysqli_query($connection, $sql);
 
 require 'navbar.php';
@@ -36,7 +38,7 @@ require 'navbar.php';
         }
 
         .reviews-container {
-            max-width: 800px;
+            max-width: 500px;
             margin: 20px auto;
             background-color: #fff;
             padding: 20px;
@@ -49,7 +51,7 @@ require 'navbar.php';
 
         h2 {
             text-align: center;
-            color: #333;
+            
         }
 
         .review {
@@ -69,7 +71,15 @@ require 'navbar.php';
         .comment {
             margin-bottom: 10px;
         }
-
+        .review-button {
+        margin:10px;
+        
+        }
+        .button-container {
+            width:100%;
+            display:flex;
+            justify-content:center;
+        }
         .review img {
             max-width: 100%;
             height: auto;
@@ -97,38 +107,47 @@ a {
 </head>
 <body>
 
-    <div class="reviews-container">
+<div class="reviews-container">
         <h2>User Reviews</h2>
         <div style="width:100%;display:flex; justify-content:center; margin: 20px 0;">
-        <button><a href="reviews.php">Leave A Review</a></button>
-</div>
-        
+            <button><a href="reviews.php">Leave A Review</a></button>
+        </div>
 
         <?php
         // Display reviews dynamically
         while ($row = mysqli_fetch_assoc($result)) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo '<div class="review">';
-                
-                echo '<p class="username">' . htmlspecialchars($row['username']) . '</p>';
-                echo '<div class="comment-container">';  // Add a new div container for the comment
-                echo '<p class="comment">' . htmlspecialchars($row['comment']) . '</p>';
-                echo '</div>';
-                echo '<img src="' . htmlspecialchars($row['img']) . '" alt="User Image">';
-                echo '</div>';
+            echo '<div class="review">';
+            echo '<p class="username">' . htmlspecialchars($row['username']) . '</p>';
+            echo '<div class="comment-container">';
+            echo '<p class="comment">' . htmlspecialchars($row['comment']) . '</p>';
+            echo '</div>';
+            echo '<img src="' . htmlspecialchars($row['img']) . '" alt="User Image">';
+
+            if (isset($_SESSION['userid'])) {
+                if ($_SESSION['role'] == 1) {
+                  
+                    echo '<div class="button-container">';
+                    echo '<form method="post" action="dashboard.php">';
+                    echo '<input type="hidden" name="review_id" value="' . $row['id'] . '">';
+                    echo '<button type="submit" class="review-button">Edit</button>';
+                    echo '</form>';
+                    echo '<form method="post" action="dashboard.php">';
+                    echo '<input type="hidden" name="review_id" value="' . $row['id'] . '">';
+                    echo '<button type="submit" class="review-button" style="background-color:#CE2029">Delete</button>';
+                    echo '</form>';
+                    echo '</div>';
+                }
             }
             
+            echo '</div>';
         }
-
-        // Close the result set
-        mysqli_free_result($result);
-
-        // Close the database connection
-        mysqli_close($connection);
         ?>
+
     </div>
-<?php
-require 'footer.php'
-?>
-</body>
+
+    <?php
+   
+
+    require 'footer.php';
+    ?>
 </html>

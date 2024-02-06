@@ -10,7 +10,13 @@
 a {
     text-decoration: none;
 }
-
+.username a {
+    color: white;
+    margin-left: 20px;
+}
+.username li {
+    display: block;
+}
 .main-slider {
     background-image:url("pictures/1st.jpg");
     animation: bgChange 20s linear infinite;

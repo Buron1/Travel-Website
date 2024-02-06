@@ -1,3 +1,7 @@
+<?php
+
+
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -24,8 +28,22 @@
                     </div>
                 </li>
                 <li class="navLi"><a href="#">Food & Drink</a></li>
-                <li class="navLi"><a href="#">Plan a Trip</a></li>
-                <li class="navLi"><button class="log-in-button" ><a href="LoginForm.php">Log In</a></button></li>
+                <li class="navLi"><a href="reviews-display.php">Reviews</a></li>
+
+                <?php
+                    if(isset($_SESSION['userid'])){
+                        if($_SESSION['role']==1) {
+                            echo '<li class="navLi"><button class="log-in-button" ><a href="dashboard.php">Dashboard</a></button></li>';
+                        }
+                        
+                        echo ' <li class="navLi"><button class="log-in-button" ><a href="logout-process.php">Log Out</a></button></li>';
+                        echo ' <li style="display:block;"><a href="#" style=" color: white;margin-left: 20px;">'. $_SESSION['name'].'</a></li>';
+                    }
+
+                    else {
+                        echo '<li class="navLi"><button class="log-in-button" ><a href="LoginForm.php">Log In</a></button></li>';
+                    }
+                ?>
                 <li onclick=showsidebar() class="navLi" id="ham-menu"><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></li>
 
             </ul>

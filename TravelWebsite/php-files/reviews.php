@@ -1,5 +1,6 @@
+<?php
 
-
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -123,6 +124,29 @@
 //    } else {
 //        echo '<p>No reviews available.</p>';
 //    }
+
+
+// if (isset($_POST['edit'])) {
+//     <div class="container">
+//         <h1>User Reviews</h1>
+
+//         <form action="reviews-process.php" method="post" enctype="multipart/form-data">
+//             <label for="name">Your Name:</label>
+//             <input type="text" id="name" name="username" required>
+
+//             <label for="reviewText">Review:</label>
+//             <textarea id="reviewText" name="reviewText" rows="4" required></textarea>
+
+//             <label for="reviewImage">Upload Image:</label>
+//             <input type="file" id="reviewImage" name="reviewImage">
+
+//             <button type="submit" name = "submit" value="submit"=>Submit Review</button>
+//         </form>
+
+//         <div class="reviews">
+//             <!-- Display user reviews dynamically from PHP -->
+//             <!-- Example PHP code: -->
+// }
 
 ?>
          

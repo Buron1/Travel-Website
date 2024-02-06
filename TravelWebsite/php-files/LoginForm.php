@@ -1,6 +1,6 @@
-<?php
-require 'login-process.php';
-?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

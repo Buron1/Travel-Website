@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,7 +28,7 @@
                 <h3 id="text-logo">BALKAN APEX JOURNEYS</h3>
             </div>
             <ul class="navUl">
-                <li class="navLi"><a href="main.html">Home</a></li>
+                <li class="navLi"><a href="index.php">Home</a></li>
                 <li class = "Things-to-do navLi">
                     <a href="#">Things To Do</a>
                     <div class="flyout-parent">
@@ -38,13 +43,29 @@
                 </li>
                 <li class="navLi"><a href="#">Food & Drink</a></li>
                 <li class="navLi"><a href="reviews-display.php">Reviews</a></li>
-                <li class="navLi"><button class="log-in-button" ><a href="LoginForm.php">Log In</a></button></li>
+
+                <?php
+                    if(isset($_SESSION['userid'])){
+                        if($_SESSION['role']==1) {
+                            echo '<li class="navLi"><button class="log-in-button" ><a href="dashboard.php">Dashboard</a></button></li>';
+                        }
+                        
+                        echo ' <li class="navLi"><button class="log-in-button" ><a href="logout-process.php">Log Out</a></button></li>';
+                        echo ' <li style="display:block;"><a href="#" style=" color: white;margin-left: 20px;">'. $_SESSION['name'].'</a></li>';
+                    }
+
+                    else {
+                        echo '<li class="navLi"><button class="log-in-button" ><a href="LoginForm.php">Log In</a></button></li>';
+                    }
+                ?>
+                
+                
                 <li onclick=showsidebar() class="navLi" id="ham-menu"><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></li>
 
             </ul>
             <ul class="navUl-side">
                 <li onclick= hidesidebar() id ="closeham" class="navLi-side"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-                <li class="navLi-side"><a href="main.html">Home</a></li>
+                <li class="navLi-side"><a href="index.php">Home</a></li>
                 <li class = "  navLi-side">
                     <a href="#">Things To Do</a>
                     <!--                    <div class="flyout-parent">-->
@@ -330,7 +351,7 @@
             window.location.href = "#";
         })
         logo.addEventListener('click', function (){
-            window.location.href = "main.html";
+            window.location.href = "index.php";
         })
 
     </script>
